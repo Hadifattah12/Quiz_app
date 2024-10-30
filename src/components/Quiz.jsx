@@ -6,7 +6,6 @@ import Summary from "./Summary.jsx";
 
 export default function Quiz() {
     const [userAnswers, setUserAnswers] = useState([]);
-    const [mark, setMark] = useState(0);
 
     const activeQuestionIndex = userAnswers.length;
     const quizIsCompleted = activeQuestionIndex === QUESTIONS.length;
