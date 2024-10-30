@@ -6,7 +6,7 @@ import QUESTIONS from '../questions.js';
 export default function Question({
     onSelectAnswer,
     onSkipAnswer,
-    index
+    index,
 }) {
     const [answer, setAnswer] = useState({
         selectedAnswer: '',
@@ -20,6 +20,7 @@ export default function Question({
     if (answer.isCorrect !== null) {
         timer = 2000;
     }
+
     function handleSelectAnswer(answer) {
         setAnswer({
             selectedAnswer: answer,
@@ -33,8 +34,10 @@ export default function Question({
             setTimeout(() => {
                 onSelectAnswer(answer);
             }, 2000)
-        }, 1000);
+        }, 1000);   
     }
+
+
     let answerState = '';
     if (answer.selectedAnswer && answer.isCorrect !== null) {
         answerState = answer.isCorrect ? 'correct' : 'wrong';
